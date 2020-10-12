@@ -8,6 +8,7 @@ const dburl = config.get('dburl');
 const projects = require('./routes/projects');
 const login = require('./routes/login');
 const register = require('./routes/register');
+const cors = require('./middleware/cors');
 
 mongoose.connect(dburl)
     .then(() => {
@@ -18,6 +19,7 @@ mongoose.connect(dburl)
     });
 
 app.use(express.json());
+app.use(cors);
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('tiny'));
 }
