@@ -8,6 +8,7 @@ const dburl = config.get('dburl');
 const projects = require('./routes/projects');
 const login = require('./routes/login');
 const register = require('./routes/register');
+const skills = require('./routes/skills');
 const cors = require('./middleware/cors');
 
 mongoose.connect(dburl)
@@ -26,6 +27,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use('/api/projects', projects);
 app.use('/api/login', login);
 app.use('/api/register', register);
+app.use('/api/skills', skills);
 
 app.use((req, res, next) => {
     res.status(404).send(`Path not found`);
