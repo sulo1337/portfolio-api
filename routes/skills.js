@@ -20,7 +20,9 @@ router.post('/', auth, async (req, res) => {
     if (skill) return res.status(400).send(`Skill already exists`);
 
     skill = new Skill({
-        skill: req.body.skill
+        skill: req.body.skill,
+        title: req.body.title,
+        link: req.body.link
     });
 
     skill.save().
