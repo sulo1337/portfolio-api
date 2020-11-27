@@ -4,17 +4,18 @@ const nodemailer = require('nodemailer');
 const config = require('config');
 
 let transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'in-v3.mailjet.com',
+    port: 587,
     auth: {
-        user: config.get('gmailUser'),
-        pass: config.get('gmailPass')
+        user: config.get('smtpUser'),
+        pass: config.get('smtpPass')
     }
 });
 
 router.post('/', (req, res) => {
     const mailOptions = {
-        from: 'sulochan.acharya1@gmail.com',
-        to: 'sulochan.acharya2@gmail.com',
+        from: 'sulochan.acharya2@gmail.com',
+        to: 's.acharya1337@gmail.com',
         subject: 'PORTFOLIO Message',
         html: '<h3>You have a new message from ' + req.body.name + '</h3><br/>Email: ' + req.body.email + '<br/>Message: ' + req.body.message,
     };

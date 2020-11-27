@@ -1,5 +1,5 @@
 {
     "jwtPrivateKey": "project_api_jwtPrivateKey",
-    "gmailUser": "project_api_gmailUser",
-    "gmailPass": "project_api_gmailPass"
+    "smtpUser": "project_api_smtpUser",
+    "smtpPass": "project_api_smtpPass"
 }
