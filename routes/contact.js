@@ -16,8 +16,8 @@ router.post('/', (req, res) => {
     const mailOptions = {
         from: 'sulochan.acharya2@gmail.com',
         to: 's.acharya1337@gmail.com',
-        subject: 'PORTFOLIO Message',
-        html: '<h3>You have a new message from ' + req.body.name + '</h3><br/>Email: ' + req.body.email + '<br/>Message: ' + req.body.message,
+        subject: 'PORTFOLIO Contact Message',
+        html: '<h3>You have a new message from ' + req.body.name + '</h3><br/><h5>Email: ' + req.body.email + '</h5><br/>Message: ' + req.body.message,
     };
 
     transporter.sendMail(mailOptions, (err, info) => {
