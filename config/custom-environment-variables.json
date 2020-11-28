@@ -1,5 +1,6 @@
 {
     "jwtPrivateKey": "project_api_jwtPrivateKey",
     "smtpUser": "project_api_smtpUser",
-    "smtpPass": "project_api_smtpPass"
+    "smtpPass": "project_api_smtpPass",
+    "smtpHost": "project_api_smtpHost"
 }

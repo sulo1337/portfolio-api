@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const config = require('config');
 
 let transporter = nodemailer.createTransport({
-    host: 'in-v3.mailjet.com',
+    host: config.get('smtpHost'),
     port: 587,
     auth: {
         user: config.get('smtpUser'),
@@ -14,7 +14,7 @@ let transporter = nodemailer.createTransport({
 
 router.post('/', (req, res) => {
     const mailOptions = {
-        from: 'sulochan.acharya2@gmail.com',
+        from: 'admin@sulochanacharya.com',
         to: 's.acharya1337@gmail.com',
         subject: 'PORTFOLIO Contact Message',
         html: '<h3>You have a new message from ' + req.body.name + '</h3><br/><h5>Email: ' + req.body.email + '</h5><br/>Message: ' + req.body.message,
@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
 
     transporter.sendMail(mailOptions, (err, info) => {
         if (err) return res.status(500).send(err);
-        return res.send('Mail sent successfully ' + info)
+        return res.send('Mail sent successfully ' + JSON.stringify(info))
     })
 })
 
