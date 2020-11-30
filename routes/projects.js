@@ -4,7 +4,7 @@ const { Project, validate } = require('../models/projects');
 const auth = require('../middleware/auth');
 
 router.get('/', async (req, res) => {
-    Project.find().lean().sort('date')
+    Project.find().lean().sort('-date')
         .then((projects) => {
             return res.send(projects);
         })
